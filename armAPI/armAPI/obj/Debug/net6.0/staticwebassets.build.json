@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cp1aYRGQm2Olj542Vq5JuYEH7qD6GtisMZBS8avWNMg=",
+  "Source": "armAPI",
+  "BasePath": "_content/armAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
