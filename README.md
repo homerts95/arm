@@ -16,6 +16,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Database update
 
-To update the database design run `dotnet-ef migrations add @name; dotnet-ef update database`  
+To update the database in the armAPI folder run `dotnet-ef migrations add @name; dotnet-ef database update`  
 
 
