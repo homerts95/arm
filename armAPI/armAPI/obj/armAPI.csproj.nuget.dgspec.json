@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj": {}
+    "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj": {
+    "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj",
         "projectName": "armAPI",
-        "projectPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj",
+        "projectPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj",
         "packagesPath": "C:\\Users\\Jetbrain\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\obj\\",
+        "outputPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jetbrain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -43,6 +43,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.3, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",

@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using armAPI.Models;
+
+var AllowedUrl = "_myAllowedUrl";
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddAuthentication(options => {
+/*builder.Services.AddAuthentication(options => {
   options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
   options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
   options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -30,7 +33,21 @@ builder.Services.AddAuthentication(options => {
     ValidateLifetime = false, // In any other application other then demo this needs to be true,
     ValidateIssuerSigningKey = true
   };
+}); */
+
+builder.Services.AddCors( options =>
+{
+  options.AddPolicy(name: AllowedUrl,
+    builder =>
+    {
+      builder.WithOrigins("http://localhost:4200")
+        .AllowCredentials()
+        .AllowAnyHeader()
+        //.AllowAnyOrigin()
+        .AllowAnyMethod();
+    });
 });
+
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
@@ -39,6 +56,7 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
 
 var app = builder.Build();
+app.UseCors(AllowedUrl);
 app.UseAuthorization();
 app.UseAuthentication();
 
@@ -78,14 +96,13 @@ app.MapPut("/user/{id}",/*[Authorize] */async (DataContext context, User user, i
   var dbuser = await context.Users.FindAsync(id);
   if (dbuser == null) return Results.NotFound("No user found. :/");
 
-  dbuser.Firstname = user.Firstname;
-  dbuser.Lastname = user.Lastname;
-  dbuser.Authlevel = user.Authlevel;
+  //dbuser.Firstname = user.Firstname;
+  //dbuser.Lastname = user.Lastname;
+  //dbuser.Authlevel = user.Authlevel;
   dbuser.Email = user.Email;
-  dbuser.Password = user.Password;
-  dbuser.Role = user.Role;
-  dbuser.Phone = user.Phone;
-  dbuser.Modifiedon=user.Modifiedon;
+  //dbuser.Role = user.Role;
+  //dbuser.Phone = user.Phone;
+  //dbuser.Modifiedon=user.Modifiedon;
   await context.SaveChangesAsync();
 
   return Results.Ok(await GetAllUsers(context));
@@ -102,11 +119,11 @@ app.MapDelete("/user/{id}",/*[Authorize] */ async (DataContext context, int id) 
   return Results.Ok(await GetAllUsers(context));
 });
 
-app.MapPost("/login", [AllowAnonymous] (DataContext context, User user, string Email, string Password) =>
+app.MapPost("/login", [AllowAnonymous] (string Email, string Password, DataContext context  ) =>
  {
-   var dbuser = context.Users.SingleOrDefault(x => x.Email == Email && x.Password == Password);
-   if (dbuser != null)
-   {
+   //var dbuser = context.Users.SingleOrDefault(x => x.Email == Email && x.Password == Password);
+   //if (dbuser != null)
+  /* {
      var secureKey = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"]);
 
      var issuer = builder.Configuration["Jwt:Issuer"];
@@ -120,9 +137,10 @@ app.MapPost("/login", [AllowAnonymous] (DataContext context, User user, string E
      {
        Subject = new System.Security.Claims.ClaimsIdentity(new[]
        {
-         //new Claim(JwtRegisteredClaimNames.id)
-         //new Claim(JwtRegisteredClaimNames.Sub, userLogin.Email),
-         //new Claim(JwtRegisteredClaimNames.Email, userLogin.Email),
+         add more claims after guide
+         new Claim(JwtRegisteredClaimNames.id)
+         new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+         new Claim(JwtRegisteredClaimNames.Email, user.Email),
          new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
 
        }),
@@ -139,21 +157,7 @@ app.MapPost("/login", [AllowAnonymous] (DataContext context, User user, string E
 
    }
    return Results.Unauthorized();
-
-   //var dbuser = await context.Users.FindAsync(user.Email, user.Password);
-   //if (dbuser == null) return Results.NotFound("User Not Found");
-
-   //var claims = new[]
-   //{
-   //  new Claim(ClaimTypes.NameIdentifier, dbuser.Firstname),
-   //  new Claim(ClaimTypes.Email, dbuser.Email),
-   //  new Claim(ClaimTypes.Surname, dbuser.Lastname),
-   //  new Claim(ClaimTypes.Role, dbuser.Role),
-   //  new Claim(ClaimTypes.MobilePhone, dbuser.Phone),
-   //  new Claim(ClaimTypes.AuthorizationDecision, dbuser.Authlevel)
-
-   // };
- });
+ */});
 
 
 app.Run();

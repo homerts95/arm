@@ -1,16 +1,30 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace armAPI
 {
-  public class User
-  {
-    public int Id { get; set; }
-    public string? Lastname { get; set; } = string.Empty;
-    public string? Firstname { get; set; } = string.Empty ;
-    public string? Authlevel { get; set; } = string.Empty ;
-    public string? Role { get; set; } = string.Empty ;
-    public string? Email { get; set; } = string.Empty ;
-    public string? Password { get; set; } = string.Empty;
-    public string? Phone { get; set; } = string.Empty ;
-    public DateTime? Modifiedon { get; set; } = DateTime.Now;
+public class User
+    {
+        [Key]
+        public int Id { get; set; }
+        [Required]
+        public string Firstname { get; set; } = string.Empty;
+        [Required]
+        public string Surname { get; set; } =  string.Empty;
+        [Required]
+        public string Email { get; set; } = string.Empty;
+        [Required]
+        public string Address { get; set; } = string.Empty;
+        [Required]
+        public string Phonenumber { get; set; } = string.Empty;
+        [Required]
+        public int Role { get; set; } 
+        [Required]
+        public int Subscription { get; set; }
+        
+        public string Postcode { get; set; } = string.Empty;
+        [Required] 
+        public string Dob { get; set; } = string.Empty;
+    }
 
-  }
+
 }

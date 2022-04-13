@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Surname</th>
+        <th scope="col">Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userList$| async; let i=index;">
+          {{i}}
+          {{user.id}}
+        <td>{{user.surname}}</td>     
+        <td>{{user.name}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <button (click)="onEdit()" ><fa-icon [icon]="faEdit"></fa-icon></button>
+        <button (click)="onDelete(user)"  > <fa-icon [icon]="faX"></fa-icon> </button>
+    </tr>
+
+    </tbody>
+  </table>
