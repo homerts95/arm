@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2Z42ueSviefFUpdCVv1VoV2wNvEpWYYufjtylEIgGoWHjAnM5ElFo20ENW6CijgG1L1hE7ntNGR75Qn8jI4m/A==",
+  "dgSpecHash": "gcpCDS9NNk8jOW+qdjrUPt1M0lyAUG0lV6VpUdqGWeCj2XTSZ3Mx/iY0XIA39W7EKggjBB4HUYAGsDtiNjVXYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj",
+  "projectFilePath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jetbrain\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Jetbrain\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.3\\microsoft.aspnetcore.authentication.jwtbearer.6.0.3.nupkg.sha512",

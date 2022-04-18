@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj": {}
+    "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj": {
+    "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj",
         "projectName": "armAPI",
-        "projectPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\armAPI.csproj",
+        "projectPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\armAPI.csproj",
         "packagesPath": "C:\\Users\\Jetbrain\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armapi\\obj\\",
+        "outputPath": "C:\\Users\\Jetbrain\\arm\\armAPI\\armAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jetbrain\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
